@@ -9,4 +9,3 @@ pandas
 httpx
 nest_asyncio
 pymongo
-base64
