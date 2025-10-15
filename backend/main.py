@@ -2,9 +2,9 @@ from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import io
-from .parser import extract_text_from_pdf, extract_structure
-from .matcher import compute_match_score
-from .database import save_parsed_resume
+from parser import extract_text_from_pdf, extract_structure
+from matcher import compute_match_score
+from database import save_parsed_resume
 import json
 
 app = FastAPI()
@@ -74,6 +74,3 @@ async def analyze_resume(file: UploadFile = File(...), job_desc: str = Form(...)
         print(f"[CRITICAL] Failed to analyze {filename}: {e}")
         traceback.print_exc()
         return JSONResponse(status_code=500, content={"error": f"Failed to analyze {filename}: {e}"})
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=10000)
