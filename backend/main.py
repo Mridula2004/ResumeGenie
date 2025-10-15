@@ -74,3 +74,6 @@ async def analyze_resume(file: UploadFile = File(...), job_desc: str = Form(...)
         print(f"[CRITICAL] Failed to analyze {filename}: {e}")
         traceback.print_exc()
         return JSONResponse(status_code=500, content={"error": f"Failed to analyze {filename}: {e}"})
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=10000)
