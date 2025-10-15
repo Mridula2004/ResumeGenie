@@ -108,7 +108,7 @@ with tab1:
             files = {"file": (file.name, file.getvalue(), "application/pdf")}
             data = {"job_desc": job_desc}
             try:
-                resp = await client.post("http://127.0.0.1:8000/analyze/", files=files, data=data)
+                resp = await client.post("https://resumegenie-qofk.onrender.com/analyze/", files=files, data=data)
                 resp.raise_for_status()
                 return resp.json(), file.name
             except Exception as e:
