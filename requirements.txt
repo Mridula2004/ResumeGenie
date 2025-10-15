@@ -9,3 +9,4 @@ pandas
 httpx
 nest_asyncio
 pymongo
+python-multipart
