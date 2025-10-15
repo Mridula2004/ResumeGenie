@@ -2,9 +2,9 @@ from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import io
-from parser import extract_text_from_pdf, extract_structure
-from matcher import compute_match_score
-from database import save_parsed_resume
+from .parser import extract_text_from_pdf, extract_structure
+from .matcher import compute_match_score
+from .database import save_parsed_resume
 import json
 
 app = FastAPI()
