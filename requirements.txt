@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+PyMuPDF
+openai
+pydantic
+python-dotenv
+streamlit
+pandas
+httpx
+nest_asyncio
+pymongo
